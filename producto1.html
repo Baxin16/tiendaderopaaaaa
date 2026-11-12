@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de ropa</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- Logotipo de la tienda -->
+        <a href="index.html">
+            <img class="header" src="img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+
+    <!-- Menu de navegacion -->
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo"
+            href="index.html">Inicio</a>
+        <a class="navegacion__enlace"
+            href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <!-- Aqui se muestra el contenido principal de la pagina -->
+    <main class="contenedor">
+        <h1>Vue JS</h1>
+        <div class="camisa">
+            <img src="img/1.jpg" alt="Imagen del producto">
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus perspiciatis, odio fugit laborum...
+                </p>
+
+                <!-- Se agrego el formulario para seleccionar la talla y cantidad -->
+                <form class="formulario" id="mi-formulario">
+                    <!-- Opciones para seleccionar la talla -->
+                    <select class="formulario__campo">
+                        <option disabled selected>
+                            -- Seleccionar Talla --
+                        </option>
+                        <option>Chica</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                        <option>ExtraGrande</option>
+                    </select>
+
+                    <!-- Este campo es para ingresar la cantidad -->
+                    <input
+                        class="formulario__campo"
+                        type="number"
+                        min="0"
+                        value="1"
+                        id="cantidad"
+                        name="cantidad"
+                    >
+
+                    <!-- Este boton es para agregar el producto al carrito -->
+                    <button
+                        class="formulario__submit"
+                        type="button"
+                        id="btn-sumar">
+                        Agregar al carrito
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
