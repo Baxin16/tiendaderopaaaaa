@@ -1,55 +1,57 @@
 :root {
-    --primario: #2752b0;
-    --primarioOscuro: #1f119d;
-    --secundario: #00a2ff;
-    --secundarioOscuro: rgb(2, 44, 233);
-    --blanco: #FFF;
-    --negro: #000;
+    --primario: #6897ff;
+    --primarioOscuro: #445be2;
+    --secundario: #ffffff;
+    --secundarioOscuro: rgb(2, 141, 233);
+    --blanco: #ffffff;
+    --negro: #000000;
 
-    /* Fuente principal de la pagina */
     --fuentePrincipal: 'Staatliches', cursive;
 }
 
-/* Tamaño de fuente y modelo de caja */
+/* Modelo de caja y tamaño general */
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
-/* Todos los elementos incluyen bordes y rellenos */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
-/* Estilos del cuerpo de la pagina */
 body {
+    margin: 0;
     background-color: var(--primario);
     font-size: 1.6rem;
     line-height: 1.5;
-    margin: 0;
-}
-
-/* Estilos generales de los parrafos */
-p {
-    font-size: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--blanco);
 }
 
-/* Se eliminan los subrayados de los enlaces */
 a {
     text-decoration: none;
 }
 
-/* ENCABEZADOS */
-h1, h2, h3 {
-    text-align: center;
-    color: var(--secundario);
+p {
+    font-size: 1.8rem;
+}
+
+/* =========================================
+2. ENCABEZADOS Y CONTENEDORES
+========================================= */
+
+h1,
+h2,
+h3 {
     font-family: var(--fuentePrincipal);
 }
 
 h1 {
+    color: var(--secundario);
     font-size: 4rem;
+    text-align: center;
     margin: 2rem 0 3rem;
 }
 
@@ -61,14 +63,16 @@ h3 {
     font-size: 2.4rem;
 }
 
-/* CONTENEDOR PRINCIPAL */
 .contenedor {
     width: min(120rem, 95%);
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* ENCABEZADO Y LOGOTIPO */
+/* =========================================
+3. ENCABEZADO Y LOGOTIPO
+========================================= */
+
 .header {
     display: flex;
     justify-content: center;
@@ -82,7 +86,24 @@ h3 {
     margin: 3rem 0;
 }
 
-/* MENU DE NAVEGACION */
+/* Encabezado de la pagina de detalle */
+
+.encabezado-tienda {
+    background-color: var(--blanco);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo-tienda {
+    display: block;
+    width: 12rem;
+    height: auto;
+}
+
+/* =========================================
+4. MENU DE NAVEGACION
+========================================= */
+
 .navegacion {
     background-color: var(--primarioOscuro);
     padding: 1.5rem 0;
@@ -96,39 +117,77 @@ h3 {
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     font-size: 3rem;
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Color cuando el cursor pasa por encima */
-.navegacion__enlace:hover {
-    color: var(--secundario);
-}
-
-/* Color de la pagina que esta seleccionada */
+.navegacion__enlace:hover,
 .navegacion__enlace--activo {
     color: var(--secundario);
 }
 
-/* Diseño general de las tarjetas de BOOTSTRAP */
+/* Menu de la pagina de detalle */
+
+.menu-tienda {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.menu-tienda a {
+    color: #222222;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.menu-tienda a:hover {
+    color: var(--primarioOscuro);
+}
+
+/* Boton del carrito */
+
+.boton-carrito {
+    display: inline-block;
+    background-color: #171923;
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+}
+
+.boton-carrito:hover {
+    color: var(--blanco);
+    background-color: #343746;
+}
+
+.boton-carrito span {
+    background-color: #777777;
+    padding: 0.3rem 0.7rem;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+/* =========================================
+5. TARJETAS DE PRODUCTOS
+========================================= */
+
 .producto-card {
-    background: linear-gradient(90deg, #ffe49b, #ff9e9e);
+    height: 100%;
+    background: linear-gradient(90deg, #ffe49b, #ff9ec3);
     border: 2px solid var(--negro);
     border-radius: 8px;
     overflow: hidden;
     color: var(--negro);
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el cursor por la tarjeta */
 .producto-card:hover {
     transform: translateY(-5px);
     color: var(--negro);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
-/* Encabezado de las tarjetas */
+/* Nombre del producto */
+
 .producto-card .card-header {
     background: transparent;
     border-bottom: 2px solid var(--negro);
@@ -138,7 +197,8 @@ h3 {
     padding: 1rem;
 }
 
-/* Imagen de cada producto */
+/* Imagen del producto */
+
 .producto-card__imagen {
     display: block;
     width: 100%;
@@ -147,7 +207,8 @@ h3 {
     padding: 1rem;
 }
 
-/* Cuerpo de las tarjetas */
+/* Precio */
+
 .producto-card .card-body {
     background: transparent;
     border-top: 1px solid var(--negro);
@@ -157,22 +218,176 @@ h3 {
     padding: 1.5rem;
 }
 
-/* Precio de los productos */
 .producto-card .producto__precio {
     color: var(--negro);
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
 }
 
-.footer {
-    background-color: var(--primarioOscuro);
-    padding: 1.5rem 1rem;
-    margin-top: 4rem;
+/* =========================================
+6. DETALLE DEL PRODUCTO
+========================================= */
+
+.pagina-producto {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-/* Texto del pie de pagina */
+/* Imagen principal */
+
+.contenedor-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contenedor-imagen img {
+    display: block;
+    width: 100%;
+    max-width: 55rem;
+    height: 45rem;
+    object-fit: contain;
+}
+
+/* Informacion */
+
+.informacion-producto {
+    padding: 2rem;
+    color: #222222;
+}
+
+.informacion-producto p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.etiqueta-producto {
+    color: #555555;
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.informacion-producto h1 {
+    color: #171923;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0 0 1.5rem;
+}
+
+.precio-producto {
+    color: #222222;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.descripcion-producto {
+    color: #555555;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Caracteristicas */
+
+.informacion-producto h2 {
+    color: #222222;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.caracteristicas-producto {
+    color: #444444;
+    font-size: 1.4rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.caracteristicas-producto li {
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+7. FORMULARIO DEL PRODUCTO
+========================================= */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.formulario label {
+    color: #333333;
+    font-size: 1.4rem;
+}
+
+.formulario__campo {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    background-color: var(--blanco);
+    color: #222222;
+}
+
+/* Botones */
+
+.botones-producto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.formulario__submit {
+    background-color: #171923;
+    color: var(--blanco);
+    border: none;
+    border-radius: 3px;
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario__submit:hover {
+    background-color: #343746;
+}
+
+/* Regresar a productos */
+
+.regresar-productos {
+    display: inline-block;
+    color: #555555;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.regresar-productos:hover {
+    color: var(--negro);
+}
+
+/* =========================================
+8. PIE DE PAGINA
+========================================= */
+
+.footer,
+.pie-tienda {
+    background-color: var(--primarioOscuro);
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
 .footer__texto {
     color: var(--blanco);
     font-family: Arial, Helvetica, sans-serif;
@@ -181,30 +396,74 @@ h3 {
     margin: 0;
 }
 
-/* AJUSTE PARA CELULARES */
+.pie-tienda img {
+    width: 12rem;
+}
+
+/* Tabletas */
+@media (max-width: 767px) {
+
+    .pagina-producto {
+        padding-top: 2rem;
+    }
+
+    .contenedor-imagen img {
+        height: 32rem;
+    }
+
+    .informacion-producto {
+        padding: 1rem;
+    }
+
+    .informacion-producto h1 {
+        font-size: 2.8rem;
+    }
+
+    .encabezado-tienda .container > div {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center !important;
+    }
+
+    .menu-tienda {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+/* Celulares */
 @media (max-width: 576px) {
 
-    /* Reduce el espacio entre los enlaces */
     .navegacion {
         gap: 2rem;
     }
-
     .navegacion__enlace {
         font-size: 2.4rem;
     }
-
-    /* Ajusta el tamaño del encabezado */
     h1 {
         font-size: 3.2rem;
     }
-
-    /* Ajusta las imagenes de los productos */
     .producto-card__imagen {
         height: 200px;
     }
-
-    /* Ajusta el texto del pie de pagina */
     .footer__texto {
         font-size: 1.3rem;
+    }
+    .menu-tienda {
+        gap: 1.5rem;
+    }
+    .menu-tienda a {
+        font-size: 1.4rem;
+    }
+    .contenedor-imagen img {
+        height: 28rem;
+    }
+    .botones-producto {
+        flex-direction: column;
+    }
+    .formulario__submit {
+        width: 100%;
     }
 }
